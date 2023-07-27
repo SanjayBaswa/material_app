@@ -1,0 +1,103 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MATRIXX</title>
+    <!-- <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href= "{% static 'images/favicon.png' %}"> -->
+
+    <link rel="stylesheet" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href= "{% static 'images/favicon.png' %}">
+
+    <!-- "{% static 'assets/vendors/jvectormap/jquery-jvectormap.css' %}" -->
+    <!-- <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script> -->
+
+    <script src="{% static 'js/off-canvas.js' %}"></script>
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/misc.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/todolist.js' %}"></script>
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+
+
+
+  </head>
+  <body>
+<div class="col-md-6 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add New Material Details</h4>
+      <!--<p class="card-description"> Horizontal form layout </p>-->
+      <form class="forms-sample" action = "/test/" method="POST">
+        {% csrf_token %}
+        <div class="form-group row">
+          <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Date</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="Date" placeholder="dd/mm/yyyy">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Item Name</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="ItemName" placeholder="Item Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Part Number</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="PartNumber" placeholder="Part Number">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="exampleInputUsername2" class="col-sm-3 col-form-label">DC Number</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="DCNumber" placeholder="DC Number">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Returnable</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="Returnable" placeholder="yes">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Project</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="Project" placeholder="Project">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="exampleInputMobile" class="col-sm-3 col-form-label">Customer</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="Customer" placeholder="Customer">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Remarks</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="Remarks" placeholder="Remarks">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <button class="btn btn-dark">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+ </body>
+
+</html>

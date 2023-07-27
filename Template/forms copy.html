@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Corona Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %} ">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'vendors/vectormap/jquery-jvectormap.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/flag-icon-css/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel-2/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel-2/owl.theme.default.min.css' %}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+  </head>
+  <body>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div   class="card-body">
+                  <h4 class="card-title">Add New Material Details</h4>
+                  <!--<p class="card-description"> Horizontal form layout </p>-->
+                  <form class="forms-sample" action = "/save_data/" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                      <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Date</label>
+                      <div class="col-sm-9">
+                        <input type="date" class="form-control" name="Date" placeholder="yyyy/mm/dd" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Item Name</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="ItemName" placeholder="Item Name" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Part Number</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="PartNumber" placeholder="Part Number" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputUsername2" class="col-sm-3 col-form-label">DC Number</label>
+                      <div class="col-sm-9">
+                        <input type="number" class="form-control" name="DCNumber" placeholder="DC Number" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Returnable</label>
+                      <div class="col-sm-9">
+                        <!-- <input type="text" class="form-control" name="Returnable" placeholder="yes"> -->
+                        <select name="Returnable" class="form-control" required>
+                          <option value="Returnable">Returnable</option>
+                          <option value="Non-Returnable">Non-Returnable</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Project</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="Project" placeholder="Project" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputMobile" class="col-sm-3 col-form-label">Customer</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="Customer" placeholder="Customer" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Remarks</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="Remarks" placeholder="Remarks">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-dark">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+              </div>
+            </div>
+            
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html>
