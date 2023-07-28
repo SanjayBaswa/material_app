@@ -133,7 +133,8 @@
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
-                          <tr>                         
+                          <tr>  
+                            <th>ID</th>                       
                             <th>Date</th>
                             <th>item</th>
                             <th>Mac Address</th>
@@ -149,7 +150,7 @@
                         <tbody>
                           {% for i in query_set %}
                           <tr>
-                            
+                            <th>{{ i.id }}</th>
                             <th>{{ i.date }}</th>
                             <th>{{ i.item }}</th>
                             <th>{{ i.Part_no }}</th>
