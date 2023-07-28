@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from MATRIX_MK1 import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('records/' , views.HomeRecords),
@@ -26,4 +27,4 @@ urlpatterns = [
     path('delete/<int:id>/',views.delete),
     path('' , views.HomeRecords),
     
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
