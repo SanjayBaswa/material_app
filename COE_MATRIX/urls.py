@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from MATRIX_MK1 import views 
+from MATRIX_MK1 import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -24,6 +24,6 @@ urlpatterns = [
     path('material_form/' , views.material_form),
     path('save_data/',views.SaveData),
     path('delete/<int:id>/',views.delete),
+    path('' , views.HomeRecords),
     
-
 ]
