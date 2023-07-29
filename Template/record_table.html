@@ -25,13 +25,13 @@
   </head>
   <body>
         <div class="main-panel">
-         
+          <h1>COE-Material Tracking</h1>
           <div class="content-wrapper">  
           <a style="position: absolute ; right: 0;  margin-right: 50px;" class="nav-link btn btn-success create-new-button"   href='/material_form/'>+ Add New Details</a>
           <!--<li class="nav-item dropdown d-none d-lg-block">-->
             <!--a  class="nav-link btn btn-success create-new-button" href="#">+ Create New Project</a>-->
           </div>
-         
+        
           <div class="content-wrapper">
             <!-- <div class="row">
               <div class="col-12 grid-margin stretch-card">
@@ -133,16 +133,15 @@
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
-                          <tr>  
-                            <th>ID</th>                       
+                          <tr>               
                             <th>Date</th>
                             <th>item</th>
                             <th>Mac Address</th>
                             <th>dc_no</th>
-                            <th>returnable</th>
                             <th>project</th>
                             <th>Customer</th> 
                             <th>time_stamp</th>
+                            <th>returnable</th>
                             <th>remarks</th>
                             <th>Action</th>
                           </tr>
@@ -150,20 +149,30 @@
                         <tbody>
                           {% for i in query_set %}
                           <tr>
-                            <th>{{ i.id }}</th>
                             <th>{{ i.date }}</th>
                             <th>{{ i.item }}</th>
                             <th>{{ i.Part_no }}</th>
                             <th>{{ i.dc_no }}</th>
-                            <td>
-                              <div class="badge badge-outline-success">{{ i.returnable }}</div>
-                            </td>
                             <th>{{ i.project }}</th>
                             <th>{{ i.customer }}</th> 
                             <th>{{ i.time_stamp }}</th>
+                            {% if  i.returnable == 'Returnable' %}
+                            <td>
+                              <div class="badge badge-outline-success">{{ i.returnable }}</div>
+                            </td>
+                            {% else  %}
+                            <td>
+                            <div class="badge badge-outline-danger">{{ i.returnable }}</div>
+                            </td>
+                            {% endif %}
                             <th>{{ i.remarks }}</th>
-                            <th><a href = '/delete/{{i.id}}'>Delete</a></th>
-                          </tr>
+                            <th>
+                              <!-- <a id = 'delete_record' data = '{{i.id}}' , href= '{{i.id}}' >DeSSlete</a> -->
+                              <!-- template.html -->
+                              <a href="#" data-id="{{i.id}}" onclick="handleClick(event)">Click Me</a>
+
+                            </th>
+                            </tr>
                           {% endfor %}
                         </tbody>
                       </table>
@@ -174,8 +183,6 @@
             </div>
           </div>
         </div>
-        
-            
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>
@@ -196,6 +203,40 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="assets/js/dashboard.js"></script>
+
+    <script>
+      // document.getElementById('delete_record').addEventListener('click' , function(){
+
+      //   var userChoice = confirm("This record will get deleted , press ok to continue");
+
+      //   if (userChoice) {
+      //       // User clicked OK, do XYZ (redirect to another URL or perform an action)
+      //       console.log("start")
+      //       console.log(linkElement.href)
+      //       console.log("End")
+      //       // hrefValue = '/delete/'+linkElement.data ;
+      //       // <h2>WEFERFRGR </h2>
+      //       // window.location.href = hrefValue ;
+      //   } 
+
+      // })
+    function handleClick(event) {
+    event.preventDefault(); // Prevent the default link behavior (optional)
+    var userChoice = confirm("This record will get deleted , press ok to continue");
+    if (userChoice) {
+
+      const objectId = event.target.dataset.id;
+      console.log("Clicked object ID:", objectId);
+      window.location.href = '/delete/'+objectId
+
+    }
+
+    // Perform any other actions or use AJAX to send the data to the server, etc.
+    // ...
+  }
+    </script>
+
     <!-- End custom js for this page -->
   </body>
 </html>
+
