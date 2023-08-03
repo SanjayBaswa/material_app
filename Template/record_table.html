@@ -25,7 +25,7 @@
   </head>
   <body>
         <div class="main-panel">
-          <h1>COE-Material Tracking</h1>
+          <h1 >COE-Material Tracking</h1>
           <div class="content-wrapper">  
           <a style="position: absolute ; right: 0;  margin-right: 50px;" class="nav-link btn btn-success create-new-button"   href='/material_form/'>+ Add New Details</a>
           <!--<li class="nav-item dropdown d-none d-lg-block">-->
@@ -133,7 +133,8 @@
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
-                          <tr>               
+                          <tr>
+                            <th>id</th>               
                             <th>Date</th>
                             <th>item</th>
                             <th>Mac Address</th>
@@ -149,6 +150,7 @@
                         <tbody>
                           {% for i in query_set %}
                           <tr>
+                            <th>{{ i.id }}</th>
                             <th>{{ i.date }}</th>
                             <th>{{ i.item }}</th>
                             <th>{{ i.Part_no }}</th>
@@ -169,7 +171,7 @@
                             <th>
                               <!-- <a id = 'delete_record' data = '{{i.id}}' , href= '{{i.id}}' >DeSSlete</a> -->
                               <!-- template.html -->
-                              <a href="#" data-id="{{i.id}}" onclick="handleClick(event)">Click Me</a>
+                              <a href="#" data-id="{{i.id}}" onclick="handleClick(event)">Delete</a>
 
                             </th>
                             </tr>
